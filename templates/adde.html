@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>
+               add expense page
+        </title>
+        <link rel="stylesheet" href="{{url_for('static',filename='sign.css')}}">
+    </head>
+    <body>
+        <b>Enter the details given below</b><br><br><br>
+        <form method="POST" action="/adde">
+        <lable>date</lable>
+        <input type="date" name="date" required><br><br><br>
+        <lable>day</lable>
+        <input type="text" name="day" required><br><br><br>
+        <label>Enter the amount</label>
+        <input type="text" name="amount" required><br><br>
+        <label>Purpose</label>
+        <input type="text" name="purpose" required><br><br>
+        <button type="submit">submit</button>
+        </form>
+    </body>
+</html>

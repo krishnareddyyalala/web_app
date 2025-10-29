@@ -1,0 +1,12 @@
+<html>
+    <head>
+        <title>
+               balance page
+        </title>
+        <link rel="stylesheet" href="{{url_for('static',filename='sign.css')}}">
+    </head>
+    <body>
+        <b>The balance amount you have is</b><br><br>
+        <input type="text" name="amount" value="{{balance}}" readonly>
+    </body>
+</html>

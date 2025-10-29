@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>
+             deposit page
+        </title>
+        <link rel="stylesheet" href="{{url_for('static',filename='sign.css')}}">
+    </head>
+    <body>
+        <b>Select the option and enter the amount</b><br><br><br>
+        <form method="post" action="/deposit">
+             <lable>date</lable>
+             <input type="date" name="date" required><br><br><br>
+
+             <lable>day</lable>
+             <input type="text" name="day" required><br><br><br>
+
+             <input type="radio" name="deposit" value="salary">
+             <lable>Salary</lable>
+             
+             <input type="radio" name="deposit" value="bonus">
+             <lable>bonus</lable>
+
+             <input type="radio" name="deposit" value="gift">
+             <lable>gift</lable><br><br><br>
+
+             <lable>enter the amount</lable>
+             <input type="text" name="amount" required><br><br><br>
+             <button type="submit">submit</button>
+        </form>
+    </body>
+</html>
+
+    
+

@@ -1,0 +1,13 @@
+<html>
+    <head>
+    <title>dashboard</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='sign.css')}}">
+    <head>
+    <body>
+        <h1>What do you what to do {{username}}?</h1>
+        <h2><a href="{{url_for('deposit')}}">deposit</a></h2><br>
+        <h2><a href="{{url_for('ta')}}">transaction</a></h2><br>
+        <h2><a href="{{url_for('checkb')}}">check balance</a></h2><br>
+        <h2><a href="{{url_for('adde')}}">add expense</a></h2><br>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>
+             signup page
+        </title>
+        <link rel="stylesheet" href="{{url_for('static',filename='sign.css')}}">
+    </head>
+    <body>
+        <h1>Create a account</h1><br><br>
+    <form method="POST" action="/signup">
+        <lable>Username</lable>
+        <input type="text" name="username" placeholder="Enter Username" required><br><br><br>
+        <lable>Password</lable>
+        <input type="password" name="password" placeholder="Enter Password" required><br><br><br>
+        <lable>re-enter Password</lable>
+        <input type="password" name="password1" placeholder="Re-enter Password"required><br><br><br>
+        <button type="submit">submit </button>
+    </form>
+    </body>
+</html>

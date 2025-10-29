@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>
+            transaction page
+        </title>
+        <style>
+            div{
+                margin: auto;
+                width: 80%px;
+                text-align: center;
+                padding: 20px;
+                background-color: aqua;
+            }
+            table {
+                margin: auto;
+                border-collapse: collapse;
+                width: 100%;
+            }
+            th, td {
+                 padding: 10px;
+                 border: 1px solid black;
+            }
+            th {
+               background-color: lightgray;
+            }
+        </style>
+    </head>
+    <body>
+      <div>
+        <form method="POST" action="/ta">
+            <select name="date_range">
+               <option value="" disabled selected>Select Date Range</option>
+               <option>this month</option>
+               <option>last 30 days</option>
+               <option>last 90 days</option>
+            </select>
+
+            <select name="amount_range">
+              <option value="" disabled selected>Select amount Range</option>
+              <option>above 200</option>
+              <option>1000-5000</option>
+              <option>above 5000</option>
+            </select>
+            <button type="submit">submit</button>
+        </form>
+        <table border="1">
+           <tr>
+             <th>Date</th>
+             <th>Day</th>
+             <th>Purpose</th>
+             <th>Amount</th>
+           </tr>
+          {% for row in transactions %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+            </tr>
+          {% endfor %}
+        </table>
+      </div><br><br>
+      <a href ="{{url_for('chart')}}">visualization by pie chart</a><br><br><br>
+      <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+    </body>
+</html>
