@@ -4,10 +4,19 @@ from datetime import datetime, date, timedelta
 import matplotlib.pyplot as plt
 import io
 import base64
+import os
+from database_setup import create_table
+
 
 app=Flask(__name__)
 
 app.secret_key = "your_very_secret_key"
+
+
+if not os.path.exists('database.db'):
+    print("Database not found. Creating new one...")
+    create_table()
+
 
 @app.route('/')
 def home():
@@ -27,12 +36,14 @@ def basic():
        conn.close()
 
        if user is None:
-          return 'invalid password'
+          return 'Create account'
        if password==user[1]:
           session['username']=username
           session['user_id'] = user[0]
-
           return redirect(url_for('dashboard'))
+       else:
+            return 'invalid password'
+        
        
     return render_template('basic.html')
 
