@@ -5,11 +5,14 @@ import matplotlib.pyplot as plt
 import io
 import base64
 
-
-
 app=Flask(__name__)
 
 app.secret_key = "your_very_secret_key"
+
+@app.route('/')
+def home():
+    return redirect(url_for('basic'))
+
 @app.route('/basic', methods=['GET','POST'])
 
 def basic():
