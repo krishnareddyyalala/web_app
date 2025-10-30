@@ -234,39 +234,6 @@ def signup():
 
   return render_template('signup.html')
 
-
-
-# connect to the same database file
-conn = sqlite3.connect('database.db')
-cursor = conn.cursor()
-
-# ----- Show all users -----
-print("\n USERS TABLE DATA:")
-cursor.execute("SELECT * FROM users;")
-users = cursor.fetchall()
-
-if users:
-    for row in users:
-        print(row)
-else:
-    print("No user records found.")
-
-# ----- Show all user transactions -----
-print("\n USER_TRANSACTIONS TABLE DATA:")
-cursor.execute("SELECT * FROM user_transactions;")
-transactions = cursor.fetchall()
-
-if transactions:
-    for row in transactions:
-        print(row)
-else:
-    print("No transaction records found.")
-
-conn.close()
-
-
-
-
 if __name__== '__main__':
     app.run(debug=True)
 
